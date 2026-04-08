@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BiSolidLike } from 'react-icons/bi';
 import { FaStar } from 'react-icons/fa';
 import { IoCloudDownloadSharp } from 'react-icons/io5';
 import { useLoaderData, useParams } from 'react-router';
 import RatingChart from '../Chart/Chart';
+import { InstallApps } from '../../Context/InstallContext';
 
 const AppsDetails = () => {
   const params = useParams()
@@ -24,6 +25,15 @@ const AppsDetails = () => {
     ratingAvg,
     ratings
   } = expectedApp
+
+
+  const { install, setInstall } = useContext(InstallApps)
+
+  const handleInstall = () => {
+    setInstall([...install, expectedApp])
+  }
+
+
 
 
   return (
@@ -56,7 +66,7 @@ const AppsDetails = () => {
               <h2 className='font-bold text-2xl'>{reviews}</h2>
             </div>
           </div>
-          <button className='btn btn-success w-48 text-white'>Install Now ({size})Mb</button>
+          <button onClick={handleInstall} className='btn btn-success w-48 text-white'>Install Now ({size})Mb</button>
         </div>
       </div>
 
