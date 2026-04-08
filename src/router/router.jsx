@@ -4,6 +4,7 @@ import MainLayout from '../Layout/MainLayout';
 import HomePage from '../Pages/HomePages/HomePage';
 import App from '../Pages/Apps/App';
 import Installation from '../Pages/Installation/Installation';
+import ErrorElement from '../ErrorElement/ErrorElement';
 
 const router = createBrowserRouter(
     [{
@@ -14,8 +15,8 @@ const router = createBrowserRouter(
             { path: '/app', Component: App },
             { path: '/install', Component: Installation }
 
-        ]
-
+        ],
+        errorElement: <ErrorElement></ErrorElement>
     }]
 );
 
