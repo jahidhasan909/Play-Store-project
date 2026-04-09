@@ -5,6 +5,8 @@ import { Link } from 'react-router';
 
 const CardTradding = ({ dataLoad }) => {
     const allApp = use(dataLoad);
+
+    
     return (
         <div className='grid grid-cols-4 gap-5 my-5 container mx-auto'>
             {
