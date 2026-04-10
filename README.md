@@ -1,16 +1,20 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+আমি React ব্যবহার করে একটি Play Store ওয়েব অ্যাপ্লিকেশন তৈরি করেছি। প্রথমে প্রজেক্টের স্ট্যাটিক ডিজাইন সম্পূর্ণ করি, তারপর ধাপে ধাপে বিভিন্ন ফিচার ও ফাংশনালিটি যোগ করেছি।
+এই প্রজেক্টে React Router ব্যবহার করে বিভিন্ন পেজের মধ্যে নেভিগেশন তৈরি করেছি। Navbar-এ তিনটি আলাদা রাউট রয়েছে: Home, Apps এবং Installed Apps।
+ডেটা শেয়ারিংয়ের জন্য আমি React Context API ব্যবহার করেছি। যেকোনো অ্যাপের Install বাটনে ক্লিক করলে সেই অ্যাপের তথ্য Context-এর মাধ্যমে Installed Apps সেকশনে চলে যায়।
+প্রতিটি অ্যাপের কার্ডে ক্লিক করলে Dynamic App Details Page ওপেন হয়, যেখানে অ্যাপটির বিস্তারিত তথ্য দেখানো হয়। এই ডিটেইলস পেজে আমি একটি Flow Chart যোগ করেছি, যাতে অ্যাপের রেটিং ও অন্যান্য ডেটা সুন্দরভাবে ভিজ্যুয়ালি উপস্থাপন করা যায়।
+প্রজেক্টের প্রতিটি বাটনে Toast Notification যোগ করা হয়েছে, যাতে ব্যবহারকারী সহজেই বুঝতে পারেন কোনো কাজ সফল হয়েছে কি না।
+Installed Apps সেকশনে আমি Sort By ফিচার যোগ করেছি। JavaScript-এর sort() মেথড ব্যবহার করে অ্যাপগুলোকে সবচেয়ে বেশি ডাউনলোড হওয়া অ্যাপ অনুসারে উপরে দেখানো হয়।
+Home পেজের Trending Apps সেকশনে প্রথমে শুধুমাত্র ৮টি অ্যাপ দেখানো হয়, যা JavaScript-এর slice() মেথড দিয়ে করা হয়েছে। নিচে একটি Show All বাটন আছে, যাতে ক্লিক করলে ব্যবহারকারী Apps ট্যাবে চলে গিয়ে সব অ্যাপ দেখতে পারেন।
+Apps ট্যাবে একটি Search Bar যোগ করা হয়েছে। JavaScript-এর filter(), toLowerCase() এবং includes() মেথড ব্যবহার করে রিয়েল-টাইম সার্চ ফাংশনালিটি তৈরি করেছি। সার্চ ইনপুটটি React State দিয়ে Controlled Input হিসেবে পরিচালনা করা হয়েছে।
+Installed Apps ট্যাবে প্রতিটি অ্যাপের জন্য Uninstall বাটন রয়েছে। এই বাটনে ক্লিক করলে JavaScript-এর filter() মেথড ব্যবহার করে অ্যাপটি Installed লিস্ট থেকে সরিয়ে ফেলা হয়।
+এই প্রজেক্টটি সম্পন্ন করতে পেরে আমি খুবই আনন্দিত। এর মাধ্যমে React এবং JavaScript-এর অনেক গুরুত্বপূর্ণ কনসেপ্ট আমার কাছে আরও স্পষ্ট ও পরিষ্কার হয়েছে।
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Tech:
+React
+React Router
+JavaScript (ES6)
+Tailwind CSS
+DaisyUI
+React Toastify
+React Icons
