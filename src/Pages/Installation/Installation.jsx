@@ -3,6 +3,7 @@ import { InstallApps } from '../../Context/InstallContext';
 import { IoCloudDownloadSharp } from 'react-icons/io5';
 import { FaArrowDown, FaStar } from 'react-icons/fa';
 import { BiSolidLike } from 'react-icons/bi';
+import { toast } from 'react-toastify';
 
 const Installation = () => {
     const { install, setInstall } = useContext(InstallApps)
@@ -20,6 +21,7 @@ const Installation = () => {
     const handleUninstall = (ins) => {
         const fillterApp = sortedApp.filter(app => app.id !== ins.id)
         setInstall(fillterApp)
+        toast.warning(`${ins.title} is unInstall`)
     }
 
 

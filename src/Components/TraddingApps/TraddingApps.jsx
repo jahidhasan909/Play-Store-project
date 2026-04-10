@@ -22,7 +22,7 @@ const TraddingApps = () => {
                 <p className='text-neutral/50'>Explore All Trending Apps on the Market developed by us</p>
             </div>
             <Suspense fallback={
-                <div className='flex items-center text-3xl font-bold text-neutral/50 justify-center'> L <span><img className='animate-spin h-[40px]' src={logo} alt="" /></span> ading
+                <div className='flex h-screen items-center text-3xl font-bold text-neutral/50 justify-center'> L <span><img className='animate-spin h-[40px]' src={logo} alt="" /></span> ading
                 </div>
             }>
                 <CardTradding dataLoad={dataLoad}></CardTradding>

@@ -1,12 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { BiSolidLike } from 'react-icons/bi';
 import { FaStar } from 'react-icons/fa';
 import { IoCloudDownloadSharp } from 'react-icons/io5';
 import { useLoaderData, useParams } from 'react-router';
 import RatingChart from '../Chart/Chart';
 import { InstallApps } from '../../Context/InstallContext';
+import { toast } from 'react-toastify';
+
 
 const AppsDetails = () => {
+
+
+
+
   const params = useParams()
   const appsload = useLoaderData()
 
@@ -28,10 +34,13 @@ const AppsDetails = () => {
 
 
   const { install, setInstall } = useContext(InstallApps)
-
+  const [isInstall, setIsInstall] = useState(false)
   const handleInstall = () => {
     setInstall([...install, expectedApp])
+    toast.success(`${title} Install Successfuly`)
+    setIsInstall(true)
   }
+
 
 
 
@@ -66,7 +75,7 @@ const AppsDetails = () => {
               <h2 className='font-bold text-2xl'>{reviews}</h2>
             </div>
           </div>
-          <button onClick={handleInstall} className='btn btn-success w-48 text-white'>Install Now ({size})Mb</button>
+          <button disabled={isInstall} onClick={handleInstall} className='btn btn-success w-48 text-white'>Install Now ({size})Mb</button>
         </div>
       </div>
 
