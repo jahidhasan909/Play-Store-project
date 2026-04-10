@@ -6,9 +6,9 @@ import { Link } from 'react-router';
 const CardTradding = ({ dataLoad }) => {
     const allApp = use(dataLoad);
 
-    
+
     return (
-        <div className='grid grid-cols-4 gap-5 my-5 container mx-auto'>
+        <div className='grid lg:grid-cols-4 gap-5 my-5 container mx-auto'>
             {
                 allApp.slice(0, 8).map((app, ind) =>
                     <Link to={`/appdetail/${app.id}`} key={ind} className="card bg-base-200 shadow-sm hover:cursor-pointer hover:translate-0.5 border border-gray-300">

@@ -7,8 +7,8 @@ const AllAppCard = ({ appLoad }) => {
     const appLoaded = use(appLoad)
     const [search, setSearch] = useState('')
 
-    
-    
+
+
 
     const fillterapp = appLoaded.filter(app => app.title.toLowerCase().includes(search.toLowerCase()))
 
@@ -16,7 +16,7 @@ const AllAppCard = ({ appLoad }) => {
 
     return (
         <div className='container mx-auto'>
-            <div className='flex items-center justify-between my-4'>
+            <div className='lg:flex items-center lg:justify-between my-4'>
                 <h4 className='font-semibold'>({appLoaded.length} )Apps Found</h4>
                 <label className="input w-52">
                     <input
@@ -29,7 +29,7 @@ const AllAppCard = ({ appLoad }) => {
             </div>
 
 
-            <div className='grid grid-cols-4 gap-5 my-5'>
+            <div className='grid grid-cols-1 lg:grid-cols-4 lg:gap-5 my-5'>
                 {
                     fillterapp.map((apps, ind) =>
                         <Link to={`/appdetail/${apps.id}`} key={ind} className="card bg-base-200 shadow-sm hover:cursor-pointer hover:translate-0.5 border border-gray-300">
